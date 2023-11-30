@@ -1,0 +1,2 @@
+2023-11-30 03:25:17,792 [http-nio-8080-exec-1] ERROR Product - An error occurred while saving a product.
+2023-11-30 03:35:37,613 [http-nio-8080-exec-3] ERROR Product - An error occurred while saving a product.
