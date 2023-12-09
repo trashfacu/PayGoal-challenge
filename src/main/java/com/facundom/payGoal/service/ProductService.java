@@ -13,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -90,4 +91,12 @@ public class ProductService implements CRUDService<ProductDTO, Product> {
         }
         return productDTOList;
     }
+
+    public List<ProductDTO> getAllSortedByPriceStream(){
+
+        return repository.findAllByOrderByProductPriceDesc().stream()
+                .map(product -> mapper.convertValue(product, ProductDTO.class))
+                .collect(Collectors.toList());
+    }
+
 }
